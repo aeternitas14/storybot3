@@ -25,7 +25,8 @@ if not bot_token:
 application = Application.builder().token(bot_token).build()
 
 # Initialize Instagram monitor
-monitor = InstagramMonitor(ig_username=ig_username, ig_password=ig_password)
+monitor = InstagramMonitor(instagram_username=ig_username,
+                           instagram_password=ig_password)
 
 
 def load_users() -> Dict[str, List[str]]:
@@ -237,7 +238,8 @@ async def download(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     try:
         # Initialize monitor
-        monitor = InstagramMonitor()
+        monitor = InstagramMonitor(instagram_username=ig_username,
+                                   instagram_password=ig_password)
 
         # Login to Instagram
         if not await monitor.login_to_instagram():
