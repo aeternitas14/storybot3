@@ -1,0 +1,13 @@
+modules = ["web", "python-3.12", "bash"]
+run = "python3 run_bot.py"
+
+[nix]
+channel = "stable-24_05"
+packages = ["freetype", "gitFull", "lcms2", "libimagequant", "libjpeg", "libtiff", "libwebp", "libxcrypt", "openjpeg", "playwright-driver", "tcl", "tk", "zlib"]
+
+[deployment]
+run = ["sh", "-c", "python undefined"]
+
+[[ports]]
+localPort = 443
+externalPort = 80
